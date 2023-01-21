@@ -1,8 +1,13 @@
+import Header from '../components/Header';
+import Home from '../components/Home';
+import Footer from '../components/Footer';
 
 const App = () => {
   return (
     <div className="application">
-      <h1>Hello, début de projet.</h1>
+      <Header />
+      <Home />
+      <Footer />
     </div>
   );
 }

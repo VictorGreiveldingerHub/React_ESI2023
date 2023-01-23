@@ -6,20 +6,20 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import App from './components/App';
 // == Import : local
 import Header from './components/partials/Header';
-import Footer from './components/partials/Footer';
 import Page404 from './page_404';
 
 //    Import components.
 
+import App from './components/App';
 import Calculatrice from './components/Calculatrice';
 import InfinityScroll from './components/InfinityScroll';
 import GithubAPI from './components/GithubAPI';
 
 // Fichiers additionnels
-import './styles.css'
+import './reset.css';
+import './styles.css';
 
 // == Render
 const router = createBrowserRouter([
@@ -29,7 +29,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <App />
-        <Footer />
       </>
     ),
     errorElement: <Page404 />
@@ -40,7 +39,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Calculatrice />
-        <Footer />
       </>
     ),
     errorElement: <Page404 />
@@ -51,7 +49,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <GithubAPI />
-        <Footer />
       </>
     ),
     errorElement: <Page404 />
@@ -62,7 +59,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <InfinityScroll />
-        <Footer />
       </>
     ),
     errorElement: <Page404 />

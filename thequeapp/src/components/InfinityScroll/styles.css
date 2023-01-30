@@ -1,3 +1,14 @@
 .infinity-scroll {
-    background-color: coral;
+    background-color: aqua;
+}
+
+.pokemon {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.poke-title {
+    font-weight: bold;
+    font-size: larger;
+    text-transform: uppercase;
 }

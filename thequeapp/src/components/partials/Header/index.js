@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './styles.css';
 
 const Header = () => {
@@ -6,16 +7,16 @@ const Header = () => {
 		<nav>
 			<ul className="navigation">
 				<li>
-					<a href={`/`}>Accueil</a>
+					<p>Accueil</p>
 				</li>
 				<li>
-					<a href={`/calculatrice`}>Calculatrice</a>
+				<p>Accueil</p>
 				</li>
 				<li>
-					<a href={`/githubapi`}>Github API</a>
+				<p>Accueil</p>
 				</li>
 				<li>
-					<a href={`/infinityscroll`}>Infiny Scroll</a>
+				<p>Accueil</p>
 				</li>
 			</ul>
 		</nav>

@@ -105,7 +105,7 @@ const App = () => {
 				deleteLast={deleteLast}
 			/>
 			<Gradient />
-			<InfinityScroll scroll={scrollInfiny} />
+			{/* <InfinityScroll scroll={scrollInfiny} /> */}
     </div>
   );
 }

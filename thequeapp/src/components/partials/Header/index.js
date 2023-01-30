@@ -18,7 +18,7 @@ const Header = ( {theme}) => {
 				<li>
 				<a href='#infinity'>Scroll Infinie</a>
 				</li>
-			  <button onClick={theme}></button>
+			  <button onClick={theme}>Dark Mode</button>
 			</ul>
 		</nav>
 	);

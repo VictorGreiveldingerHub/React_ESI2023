@@ -1,3 +1,58 @@
-.calculatrice-component {
-    background-color: brown;
+.calculatrice {
+	margin: 1em;
+}
+
+.machine {
+	border: 1px solid black;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: 0 2px 60px black;
+}
+
+.result {
+	padding: 10px;
+	text-align: right;
+	background-color: black;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.result span {
+	color: #FFF;
+	font-size: 16px;
+}
+
+button	{
+	appearance: none;
+	border: none;
+	outline: none;
+	color: #FFF;
+	padding: 15px;
+	cursor: pointer;
+	transition: .4s;
+}
+
+button:hover {
+	opacity: .8;
+}
+
+.operateurs {
+	display: flex;
+}
+
+.operateurs button {
+	flex: 1 1 0%;
+	background-color: blueviolet;
+	font-weight: 700;
+}
+
+.numbers {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.numbers button {
+	flex: 1 1 33.333%;
+	max-width: 33%;
+	background-color: black;
 }

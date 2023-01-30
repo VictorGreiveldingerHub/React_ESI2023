@@ -2,22 +2,23 @@ import React from 'react';
 
 import './styles.css';
 
-const Header = () => {
+const Header = ( {theme}) => {
 	return (
 		<nav>
 			<ul className="navigation">
 				<li>
-					<p>Accueil</p>
+					<a href="#top">Top</a>
 				</li>
 				<li>
-				<p>Accueil</p>
+					<a href='#calculatrice'>Calculatrice</a>
 				</li>
 				<li>
-				<p>Accueil</p>
+				<a href='#gradient'>Gradient de couleur</a>
 				</li>
 				<li>
-				<p>Accueil</p>
+				<a href='#infinity'>Scroll Infinie</a>
 				</li>
+			  <button onClick={theme}></button>
 			</ul>
 		</nav>
 	);

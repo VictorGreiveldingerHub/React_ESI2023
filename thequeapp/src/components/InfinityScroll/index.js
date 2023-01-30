@@ -3,20 +3,19 @@ import './styles.css';
 
 const InfinityScroll = ({ scroll }) => {
 
-  // const allPokemons = scroll.map(e =>  {
-  //   return (
-  //     <li className="pokemon" key={e.url}>
-  //       <h4 className="poke-title">{e.name}</h4>
-  //       <p>{e.url}</p>
-  //     </li>
-  //   );
-  // });
+  const allPokemons = scroll.map(e =>  {
+    return (
+      <li className="pokemon" key={e.length}>
+        <h4 className="poke-title">{e.name}</h4>
+      </li>
+    );
+  });
     
   return (
       <div className="infinity-scroll" id="infinity">
         <h2>Gallery infinie</h2>
         <ul>
-          {/* {allPokemons} */}
+          {allPokemons}
         </ul>
       </div>
   );

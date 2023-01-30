@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './styles.css';
 
 // == Import : local
@@ -7,18 +7,18 @@ import Header from '../partials/Header';
 // import Page404 from './page_404';
 
 import Calculatrice from '../Calculatrice';
-// import InfinityScroll from '../InfinityScroll';
+import InfinityScroll from '../InfinityScroll';
 import Gradient from '../Gradient';
 
 
 const App = () => {
-	// const [scrollInfiny, setScrollInfiny] = useState([]);
+	const [scrollInfiny, setScrollInfiny] = useState([]);
 	const [theme, setTheme] = useState("light");
 	const [calc, setCalc] = useState("");
 	const [result, setResult] = useState("");
 	
 	// // Pour le scroll infini
-	// let offset = 0;
+	let offset = 0;
 	// // Pour la calculatrice
 	const opes = ["/", "*", "+", "-", "."];
 	
@@ -51,7 +51,7 @@ const App = () => {
 	}
 	
 	const deleteLast = () => {
-		if (calc == ''){
+		if (calc === ''){
 			return;
 		};
 		
@@ -59,31 +59,31 @@ const App = () => {
 		setCalc(value);
 	}
 	
-	// const loadMorePokemons = () => {
-	// 	axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}limit=20`)
-	// 		.then(res => {
-	// 			const pokemons = [];
-	// 			res.data.results.forEach(e => {
-	// 				pokemons.push(e);
-	// 				setScrollInfiny(pokeList => [...pokeList, ...pokemons]);
-	// 			});
-	// 		})
-	// 		.catch(error => {
-	// 			console.log(error);
-	// 		});
-	// 	offset += 20;
-	// };
+	const loadMorePokemons = () => {
+		axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}limit=20`)
+			.then(res => {
+				const pokemons = [];
+				res.data.results.forEach(e => {
+					pokemons.push(e);
+					setScrollInfiny(pokeList => [...pokeList, ...pokemons]);
+				});
+			})
+			.catch(error => {
+				console.log(error);
+			});
+		offset += 20;
+	};
 	
-	// const handleScroll = (e) => {
-	// 	if(window.innerHeight + e.target.documentElement.scrollTop >= e.target.documentElement.scrollHeight){
-	// 		loadMorePokemons();
-	// 	};
-	// };
+	const handleScroll = (e) => {
+		if(window.innerHeight + e.target.documentElement.scrollTop >= e.target.documentElement.scrollHeight){
+			loadMorePokemons();
+		};
+	};
 	
 	useEffect(() => {
-		// loadMorePokemons();
-		// window.addEventListener("scroll", handleScroll);
-	});
+		loadMorePokemons();
+		window.addEventListener("scroll", handleScroll);
+	}, []);
   
   return (
     <div className={`application-${theme}`}>
@@ -105,7 +105,7 @@ const App = () => {
 				deleteLast={deleteLast}
 			/>
 			<Gradient />
-			{/* <InfinityScroll scroll={scrollInfiny} /> */}
+			<InfinityScroll scroll={scrollInfiny} />
     </div>
   );
 }
